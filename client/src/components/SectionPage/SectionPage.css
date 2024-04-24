@@ -1,0 +1,183 @@
+.header{
+    font-size: 26px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header a{
+    width: min-content;
+    align-self: flex-end;
+    font-size: large;
+}
+
+.header a:hover{
+    text-decoration: underline;
+}
+
+.col-1{
+    flex: 0 0 96px !important;
+}
+
+.col-11{
+    flex: 0 0 91.666667% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionInfo {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.sectionInfo h2{
+    font-size: 20px;
+    display: inline-block;
+}
+
+.sectionInfo p{
+    display: inline-block;
+}
+
+table{
+    width: 98%;
+    text-align: center;
+
+    align-self: center;
+
+    margin-bottom: 80px;
+}
+
+table, th, td{
+    border: 1px solid black !important;
+}
+
+table th{
+    padding: 15px;
+    background-color: #1565c0;
+    ;
+    color: white;
+}
+
+table td{
+    padding: 10px;
+}
+
+tr{
+    padding: 22px;    
+}
+
+.header .btn{
+    padding-right: 30px;
+}
+
+p.btn:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.container-fluid > .row{
+    justify-content: space-between;
+    margin-right: -7px;
+}
+
+.MuiBox-root.css-1wnsr1i > * {
+    margin-block: 5px;
+}
+
+.formBtns{
+    display: flex;
+    justify-content: flex-end;
+    margin-block: 5px;
+
+}
+
+.formBtns > *{
+    margin-left: 10px !important;
+    margin-top: 10px !important;
+    width: 85px;
+    height: 50px;
+}
+
+.closeBtn, .saveBtn{
+    margin-block: 5px;
+}
+
+.datepicker{
+    width: 100%;
+}
+
+form{
+    width: 455px;
+}
+
+form > *{
+    margin-bottom: 6px;
+}
+
+.MuiDialogContent-root.css-ypiqx9-MuiDialogContent-root > * {
+    margin-bottom: 5px;
+}
+
+.css-knqc4i-MuiDialogActions-root, .css-10o2lyd-MuiStack-root{
+    padding: 0 !important;
+}
+
+.actionBtns{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 1100px) {
+    .sectionInfo{
+        width: 97%;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .sectionInfo{
+        width: 95%;
+    }
+    table{
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .sectionInfo{
+        width: 97%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .sectionInfo{
+        width: 97%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .sectionInfo{
+        width: 91%;
+    }
+    table{
+        width: 91%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .header{
+        font-size: 23px;
+    }
+    .sectionInfo{
+        width: 88%;
+    }
+    table{
+        width: 87%;
+        font-size: 13px;
+    }
+}

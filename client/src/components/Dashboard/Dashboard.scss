@@ -1,0 +1,51 @@
+.css-1vuxth3-MuiBarElement-root, .MuiChartsLegend-mark{
+    fill: #1D57AA !important;
+}
+
+.chartsContainer{
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.css-1v5z4dq-MuiPaper-root-MuiCard-root{
+    width: 50% !important;
+}
+
+.css-1tyxmst-MuiResponsiveChart-container{
+    width: 100% !important;
+    height: 45% !important;
+}
+
+.css-1tyxmst-MuiResponsiveChart-container text{
+    font-weight: bold !important;
+}
+
+.css-46bh2p-MuiCardContent-root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root{
+    width: 50% !important;
+    // height: 60% !important;
+}
+
+.MuiCard-root css-1v5z4dq-MuiPaper-root-MuiCard-root{
+    width: 50% !important;
+}
+
+.violationChart{
+    width: 50%;
+}
+
+.css-1v603wu-MuiResponsiveChart-container{
+    width: 60% !important;
+    height: 45vh !important;
+}
+
+
+body{
+    background-color: red;
+}

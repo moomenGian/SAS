@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+
+html,
+body,
+#root,
+.row,
+.container-fluid {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.col-1{
+  width: 6.5% !important;
+}
+
+.col-11{
+  width: 93.5% !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1D57AA;
+
+  border-radius: 70px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #143a6e;
+}

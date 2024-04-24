@@ -1,0 +1,72 @@
+.backgroundPhoto > *{
+    position: relative;
+    color: white;
+}
+.backgroundPhoto{
+    background-image: url('../../assets/school_photo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.schoolLogo{
+    background-image: url('../../assets/school-logo.png');
+}
+
+#schoolLogo{
+    width: max-content;
+    height: 150px;
+}
+
+.heading{
+    width: 65vw;
+    text-align: center;
+    height: 100vh;
+}
+
+.heading h1{
+    padding-inline: 130px;
+    margin-top: 55px;
+    font-weight: bold;
+}
+
+.login-container{
+    height: 415px;
+    width: -webkit-fill-available;
+    background-color: #D9D9D9;
+    border: 2px solid #1D57AA;
+    border-radius: 7px;
+}
+
+
+.login-container p {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.userName, .userPass{
+    border: 2px solid !important;
+    padding: 17px !important;
+}
+
+.Login{
+    width: -webkit-fill-available;
+}
+
+@media (max-width: 1016px) {
+    .heading h1{
+        padding-inline: 50px;
+    }
+
+    #schoolLogo{
+        height: 120px;
+    }
+}
+
+@media (max-width: 850px) {
+    .heading h1{
+        font-size: 30px;
+    }
+}

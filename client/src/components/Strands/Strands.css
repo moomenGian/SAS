@@ -1,0 +1,14 @@
+.s{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+
+    padding-left: 15px;
+}
+a{
+    text-decoration: none !important;
+}
+
+a:hover{
+    text-decoration: underline !important;
+}

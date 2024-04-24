@@ -1,0 +1,35 @@
+
+
+.form-floating input{
+    height: auto;
+}
+
+.btn-close{
+    display: none;
+}
+
+.close-icon{
+    width: 20px;
+    cursor: pointer;
+}
+
+.use-css{
+    button{
+        background-color: #2e71cf !important;
+    }
+}
+
+.form-floating > input{
+    font-size: 18px !important;
+    width: -webkit-fill-available !important;
+    border-radius: 7px !important;
+    padding: 12px;
+    margin-bottom: 10px !important;
+    border: 1px solid ;
+}
+
+.date-input-record{
+    width: -webkit-fill-available;
+    padding: 8px;
+    border-radius: 8px;
+}

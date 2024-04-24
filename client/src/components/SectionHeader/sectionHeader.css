@@ -1,0 +1,35 @@
+.content h1{
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.searchIcon{
+    width: 33px;
+    margin-left: -42px;
+}
+
+input{
+    width: 739px;
+    height: 20px;
+    border-radius: 25px;
+    padding: 17px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .content h1{
+        font-size: 20px;
+    }
+
+    input{
+        width: 528px;
+    }
+  }
