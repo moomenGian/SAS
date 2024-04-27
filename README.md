@@ -15,19 +15,19 @@ The Student Anecdotal Management System is a web application designed to streaml
 
 - **Login Page**
 
-![LoginPage](screenshots/login.PNG)
+![LoginPage](https://github.com/moomenGian/CSHS-Anecdotal-System/blob/main/screenshots/login.PNG?raw=true)
 
 - **Sections List Page**
 
-![SectionsList](screenshots/sectionsList.PNG)
+![SectionsList](https://raw.githubusercontent.com/moomenGian/CSHS-Anecdotal-System/main/screenshots/sectionsList.PNG)
 
 - **Section Page**
 
-![SectionPage](screenshots/sectionPage.PNG)
+![SectionPage](https://raw.githubusercontent.com/moomenGian/CSHS-Anecdotal-System/main/screenshots/sectionPage.PNG)
 
 - **Dashboard**
 
-![DashboardPage](screenshots/dashboard.PNG)
+![DashboardPage](https://raw.githubusercontent.com/moomenGian/CSHS-Anecdotal-System/main/screenshots/dashboard.PNG)
 
 # Prerequisites
 
@@ -86,5 +86,4 @@ Start the App
 **Server:** 
 - Node.js
 - Express.js
-- nodemon
 - MySQL
