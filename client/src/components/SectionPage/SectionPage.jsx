@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import AddRecordBtn from '../AddRecordBtn/AddRecordBtn' 
 import { RecordForm } from "./RecordForm"
 import { Button, TextField, Tooltip } from "@mui/material"
-import { RecordTable } from "./RecordTable"
 import { useParams } from "react-router-dom"
 import { EditForm } from "./EditForm"
 
@@ -48,12 +47,10 @@ function Content({Strand, sectionName}) {
         if (data) {
             await Promise.all(data.map(async (element, index) => {
                 let e = Object.values(element)[0].violations[0];
-                e.id = index + 1
                 violations.push(e);
             }));
         }
     };
-    console.log(data);
     fetchViolations()
 
     return (
@@ -97,7 +94,6 @@ function Content({Strand, sectionName}) {
                         ) : (
                             violations.map(record => {
                                 const date = new Date(record.date).toLocaleDateString()
-                                
                                 return (
                                     <tr key={`${record.id}`}>
                                         <td>{record.violator}</td>
@@ -106,15 +102,16 @@ function Content({Strand, sectionName}) {
                                         <td>{record.witness}</td>
                                         <td>{date}</td>
                                         <td className="actionBtns">
-                                            <Tooltip title={'Edit Violation Details'}>
-                                                <EditForm />
-                                            </Tooltip>
-                                            <Tooltip title={'Update Case Status'}>
-                                                <Button
-                                                    variant="contained"
-                                                >
-                                                    UPDATE
-                                                </Button>
+                                            <EditForm record={record}/>
+                                            <Tooltip title={'View more details'}>
+                                                <Link to={'/CaseStatus'}>
+                                                    <Button
+                                                        variant="contained"
+                                                    >   
+                                                        <Link className="viewBtn" style={{color: 'white'}} to={'/12-CARMACK'}>VIEW</Link>
+                                                    </Button>
+                                                </Link>
+                                                
                                             </Tooltip>
                                         </td>
                                     </tr>

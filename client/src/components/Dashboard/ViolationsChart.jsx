@@ -6,7 +6,6 @@ import './Dashboard.scss'
 
 
 const rawdata = await getAllRecords()
-console.log(JSON.stringify(rawdata, null, 2));
 
 
 const violationCounts = {};
@@ -36,7 +35,6 @@ const data = aggregatedData.map(({ violation, count }, index) => ({
     value: count
 }));
 
-console.log(JSON.stringify(data, null, 2));
 
   
 const pieSizing = {

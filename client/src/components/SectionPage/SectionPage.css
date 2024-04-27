@@ -58,7 +58,7 @@ table, th, td{
 
 table th{
     padding: 15px;
-    background-color: #1565c0;
+    background-color: #464e57;
     ;
     color: white;
 }
@@ -132,11 +132,32 @@ form > *{
     justify-content: space-evenly;
 }
 
+.bruh{
+    justify-content: space-between !important;
+    padding-inline: 20px !important;
+}
+
+.deleteBtn{
+    background-color: #d35151 !important;
+}
+
+.MuiDialogTitle-root+.css-ypiqx9-MuiDialogContent-root{
+    padding-top: 8px;
+}
+
+.row{
+    flex-direction: column;
+}
+
+.viewBtn:hover{
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
 @media only screen and (min-width: 1100px) {
     .sectionInfo{
         width: 97%;
     }
-
 }
 
 @media only screen and (max-width: 1000px) {
@@ -145,6 +166,12 @@ form > *{
     }
     table{
         width: 95%;
+    }
+}
+
+@media screen and (max-width: 1175px) {
+    .col-11{
+        width: 50% !important;
     }
 }
 

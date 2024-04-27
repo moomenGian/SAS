@@ -7,6 +7,7 @@ body,
 .container-fluid {
   height: 100%;
   font-family: 'Inter', sans-serif;
+  width: 100%;
 }
 
 .col-1{
@@ -37,4 +38,8 @@ body,
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #143a6e;
+}
+
+@media screen {
+  
 }

@@ -13,6 +13,7 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import Homepage from './components/Homepage/Homepage'
+import { CaseStatusPage } from './components/SectionPage/CaseStatusPage'
 
 
 
@@ -38,8 +39,8 @@ const router = createBrowserRouter([
     element: <Homepage />
   },
   {
-    path: 'chart',
-    element: <ChartchartTest />
+    path: '/CaseStatus',
+    element: <CaseStatusPage />
   }
 ])
 

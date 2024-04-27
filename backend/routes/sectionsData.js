@@ -51,12 +51,10 @@ async function getData(sectionName) {
                     result.push({
                         [sectionName]: {
                             adviser,
-                            violations: [{violator, violation, violationDescription, witness, date}],
-                            id
+                            violations: [{violator, violation, violationDescription, witness, date, id}]
                         }
                     })
                 })
-                
                 resolve(result)
     
             }
