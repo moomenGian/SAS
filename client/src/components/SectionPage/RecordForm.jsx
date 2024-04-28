@@ -104,9 +104,9 @@ export function RecordForm({section}){
                     />
                     <TextField required onChange={(e) => setWitness(e.target.value)} id="outlined-basic" label="Witness" variant="outlined" fullWidth/>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DemoContainer components={['DatePicker']}>
-                        <DatePicker className='datepicker' label="Date" value={date} onChange={(newValue) => setformattedDate(newValue.format('MM-DD-YYYY')) } />
-                    </DemoContainer>
+                        <DemoContainer components={['DatePicker']}>
+                            <DatePicker className='datepicker' label="Date" value={date} onChange={(newValue) => setformattedDate(newValue.format('MM-DD-YYYY')) } />
+                        </DemoContainer>
                     </LocalizationProvider>
                     
                     <DialogActions>

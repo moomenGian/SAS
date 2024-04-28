@@ -10,6 +10,10 @@ const editRecordRoute = require('./routes/editRecord')
 const deleteRecordRoute = require('./routes/deleteRecord')
 const searchRecordRoute = require('./routes/searchRecord')
 const getRecordRoute = require('./routes/getRecord')
+const updateStatusRoute = require('./routes/updateStatus')
+const createHistoryRoute = require('./routes/createHistory')
+const getHistoryRoute = require('./routes/getHistory')
+const editAdviserRoute = require('./routes/editAdviser')
 
 const { formatDate } = require('./dateFormat.js')
 
@@ -42,5 +46,13 @@ app.use('/delete', deleteRecordRoute)
 app.use('/search', searchRecordRoute)
 
 app.use('/getRecord', getRecordRoute)
+
+app.use('/updateStatus', updateStatusRoute)
+
+app.use('/createHistory', createHistoryRoute)
+
+app.use('/getHistories', getHistoryRoute)
+
+app.use('/editAdviser', editAdviserRoute)
 
 app.listen(port, () => console.log(`connected to port ${port}`))

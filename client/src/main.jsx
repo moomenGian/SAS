@@ -13,7 +13,7 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import Homepage from './components/Homepage/Homepage'
-import { CaseStatusPage } from './components/SectionPage/CaseStatusPage'
+import { CaseStatusPage } from './components/SectionPage/CaseStatus/CaseStatusPage'
 
 
 

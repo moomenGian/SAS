@@ -2,11 +2,11 @@ import { useEffect, useState } from "react"
 import Navbar from "../Navbar/Navbar"
 import './SectionPage.css'
 import { Link } from 'react-router-dom'
-import AddRecordBtn from '../AddRecordBtn/AddRecordBtn' 
 import { RecordForm } from "./RecordForm"
-import { Button, TextField, Tooltip } from "@mui/material"
+import { Button, Input, TextField, Tooltip } from "@mui/material"
 import { useParams } from "react-router-dom"
 import { EditForm } from "./EditForm"
+import { EditAdviserForm } from "./EditAdviserForm"
 
 
 
@@ -16,6 +16,7 @@ async function fetchSectionDatas(sectionName, setData) {
         const response = await fetch(`http://localhost:3000/api/sections/${sectionName}`)
         
         if(response.status === 404){
+            console.log('section has no records')
             return
         }
 
@@ -30,6 +31,7 @@ async function fetchSectionDatas(sectionName, setData) {
 function Content({Strand, sectionName}) {
     //replace the % from the section name url
     const formattedSecName = sectionName.replaceAll(' ','')
+    
 
     const [ data,setData ] = useState(null)
 
@@ -39,8 +41,7 @@ function Content({Strand, sectionName}) {
     
 
     const adviser = data && data[0] && data[0][formattedSecName].adviser
-
-
+    
     let violations = [];
 
     const fetchViolations = async () => {
@@ -53,6 +54,7 @@ function Content({Strand, sectionName}) {
     };
     fetchViolations()
 
+
     return (
         <>
             <h1 className="header">STUDENT VIOLATION RECORDS 
@@ -60,7 +62,10 @@ function Content({Strand, sectionName}) {
             </h1>
 
             <div className="sectionInfo">
-                <h2>{Strand} / {sectionName} / {adviser ? adviser : '<Adviser not found>'} </h2>
+                <h2>
+                    {Strand} / {sectionName} / {adviser ? adviser : '<Adviser not found>'} 
+                    <EditAdviserForm sectionName={formattedSecName}/>
+                </h2>
                 <p>Total Violations: {violations ? violations.length : 0}</p>
             </div>
             <table>
@@ -89,7 +94,7 @@ function Content({Strand, sectionName}) {
                     <tbody>
                         {violations.length === 0 ? (
                             <tr>
-                                <td colSpan={5}>No Records Found</td>
+                                <td colSpan={6}>No Records Found</td>
                             </tr>
                         ) : (
                             violations.map(record => {
