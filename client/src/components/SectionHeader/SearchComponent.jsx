@@ -2,6 +2,7 @@ import { useState } from "react";
 import * as React from 'react'
 import axios from 'axios'
 import { Input, Button } from 'antd'
+import { Link } from "react-router-dom";
 
 const { Search } = Input
 
@@ -22,8 +23,7 @@ export function SearchComponent() {
     try {
       const response = await axios.get(`/search?query=${value}`);
       setSearchResults(response.data);
-      console.log(searchResults);
-      console.log(value);
+      console.log(searchResults, value, value);
     } catch (error) {
       console.error('Error searching:', error);
     }
@@ -42,9 +42,9 @@ export function SearchComponent() {
         <ul>
           {searchResults.map((result) => (
             <li key={result.id}>
-              <Button type="link" >
+              <Link to={`/CaseStatus/${result.id}`}>
                 {result.violator} - {result.violation} - {result.sectionName}
-              </Button>
+              </Link>
             </li>
           ))}
         </ul>

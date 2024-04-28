@@ -51,8 +51,20 @@
     padding: 17px !important;
 }
 
+form{
+    display: ruby;
+}
+
 .Login{
-    width: -webkit-fill-available;
+    width: 30% !important;
+}
+
+input{
+    width: 88% !important   ;
+}
+
+.col{
+    width: auto !important;
 }
 
 @media (max-width: 1016px) {

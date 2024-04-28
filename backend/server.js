@@ -2,7 +2,6 @@ const express = require('express')
 const cors = require('cors')
 const mysql = require('mysql2')
 
-const violationsRoute = require('./routes/violations')
 const sectionsDataRoute = require('./routes/sectionsData')
 const insertRecordRoute = require('./routes/insertRecord')
 const logInRoute = require('./routes/logIn.js')
@@ -10,6 +9,7 @@ const getAllDataRoute = require('./routes/getAllData')
 const editRecordRoute = require('./routes/editRecord')
 const deleteRecordRoute = require('./routes/deleteRecord')
 const searchRecordRoute = require('./routes/searchRecord')
+const getRecordRoute = require('./routes/getRecord')
 
 const { formatDate } = require('./dateFormat.js')
 
@@ -26,7 +26,6 @@ app.get('/students', (req,res) => res.send(studentDatas) )
 
 app.get('/', (req,res) => res.send('connected to server'))
 
-app.use('/violations', violationsRoute)
 
 app.use('/api/sections', sectionsDataRoute)
 
@@ -41,5 +40,7 @@ app.use('/edit', editRecordRoute)
 app.use('/delete', deleteRecordRoute)
 
 app.use('/search', searchRecordRoute)
+
+app.use('/getRecord', getRecordRoute)
 
 app.listen(port, () => console.log(`connected to port ${port}`))

@@ -104,14 +104,11 @@ function Content({Strand, sectionName}) {
                                         <td className="actionBtns">
                                             <EditForm record={record}/>
                                             <Tooltip title={'View more details'}>
-                                                <Link to={'/CaseStatus'}>
-                                                    <Button
-                                                        variant="contained"
-                                                    >   
-                                                        <Link className="viewBtn" style={{color: 'white'}} to={'/12-CARMACK'}>VIEW</Link>
-                                                    </Button>
-                                                </Link>
-                                                
+                                                <Button
+                                                    variant="contained"
+                                                >   
+                                                    <Link className="viewBtn" style={{color: 'white'}} to={`/CaseStatus/${record.id}`}>VIEW</Link>
+                                                </Button>
                                             </Tooltip>
                                         </td>
                                     </tr>

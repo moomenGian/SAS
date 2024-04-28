@@ -39,7 +39,7 @@ const router = createBrowserRouter([
     element: <Homepage />
   },
   {
-    path: '/CaseStatus',
+    path: '/CaseStatus/:caseID',
     element: <CaseStatusPage />
   }
 ])
