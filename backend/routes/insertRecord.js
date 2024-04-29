@@ -32,10 +32,10 @@ router.post('/', (req, res) => {
         date,
         } = req.body;
 
-    const sql = `INSERT INTO sectionsdata(sectionName, adviser, violator, violation, violationDescription, witness, date)
-                 VALUES(?,?,?,?,?,?,?)`
+    const sql = `INSERT INTO sectionsdata(sectionName, adviser, violator, violation, violationDescription, witness, date, status)
+                 VALUES(?,?,?,?,?,?,?,?)`
 
-    const data = [sectionName, adviser, violator, violation, violationDescription, witness, date]
+    const data = [sectionName, adviser, violator, violation, violationDescription, witness, date, 'Under Review']
 
     con.query(sql, data, (err, results) => {
         if(err){

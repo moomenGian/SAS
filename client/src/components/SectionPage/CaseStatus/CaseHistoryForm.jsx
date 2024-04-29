@@ -35,6 +35,7 @@ export function CaseHistoryForm({ caseID }) {
         notes
       });
       handleClose();
+      window.location.reload()
     } catch (error) {
       console.error('Error saving history event:', error);
     }
@@ -66,7 +67,7 @@ export function CaseHistoryForm({ caseID }) {
           <TextField
             margin="dense"
             id="initiator"
-            label="Initiator"
+            label="Action By:"
             fullWidth
             value={initiator}
             onChange={(e) => setInitiator(e.target.value)}
@@ -74,7 +75,7 @@ export function CaseHistoryForm({ caseID }) {
           <TextField
             margin="dense"
             id="notes"
-            label="Notes"
+            label="Details"
             fullWidth
             multiline
             rows={4}

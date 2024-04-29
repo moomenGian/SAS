@@ -42,7 +42,8 @@ export function DeleteConfirmation({ record }) {
           onSubmit: (event) => {
               event.preventDefault();
           },
-        }}  
+        }} 
+        // sx={{ width: 'max-content' }} 
       >
         <DialogTitle>Are you sure you want to delete this record?</DialogTitle>
 

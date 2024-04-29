@@ -10,7 +10,7 @@ export function CaseDetails({ caseDetails, caseID }) {
       <Card sx={{ mx: 'auto' }}>
         {/* <CardHeader sx={{ textAlign: 'center'}} title="Case Status" subheader={caseDetails.status} /> */}
         <Typography sx={{ textAlign: 'center' }} variant='h2'>Case Status</Typography>
-        <Typography sx={{ textAlign: 'center' }} variant='h5'>{caseDetails.status}</Typography>
+        <Typography sx={{ textAlign: 'center' }} variant='h5'>{caseDetails.status ? caseDetails.status : 'Status Undefined'}</Typography>
         <CardContent>
           <table>
               <tbody>

@@ -23,7 +23,6 @@ export function SearchComponent() {
     try {
       const response = await axios.get(`/search?query=${value}`);
       setSearchResults(response.data);
-      console.log(searchResults, value, value);
     } catch (error) {
       console.error('Error searching:', error);
     }

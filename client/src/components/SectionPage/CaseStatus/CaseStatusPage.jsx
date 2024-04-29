@@ -29,8 +29,7 @@ export function CaseStatusPage() {
         setCaseData(response.data);
         setHistory( await useGetHistory(caseID) )
         
-        // setHistory(useGetHistory(caseID))
-        
+          
       } catch (error) {
         console.error('Error fetching case data:', error);
       }
@@ -39,6 +38,7 @@ export function CaseStatusPage() {
   }, [caseID]);
 
 
+  
   // const history = [
   //   {
   //     event_date: '2024-04-15',
@@ -66,7 +66,6 @@ export function CaseStatusPage() {
   //   },
   // ];
   
-
   return (
     <>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -94,14 +93,14 @@ export function CaseStatusPage() {
                       secondary={
                         <>
                           <Typography variant="h5" gutterBottom>
-                            <strong>Description:</strong>{' '}
-                            {event.event_description}
+                            <strong>Event:</strong>{' '}
+                            {event.eventDescription}
                           </Typography>
                           <Typography variant="h5" gutterBottom>
-                            <strong>Initiator:</strong> {event.initiator}
+                            <strong>Action By:</strong> {event.initiator}
                           </Typography>
                           <Typography variant="h5" gutterBottom>
-                            <strong>Notes:</strong> {event.notes}
+                            <strong>Details:</strong> {event.notes}
                           </Typography>
                         </>
                       }

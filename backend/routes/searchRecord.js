@@ -39,7 +39,6 @@ router.get('/', async (req, res) => {
         res.status(500).send('An error occurred while searching records');
         return;
       }
-      console.log(results);
       res.json(results);
     });
   } catch (error) {

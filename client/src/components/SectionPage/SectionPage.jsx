@@ -40,7 +40,12 @@ function Content({Strand, sectionName}) {
     }, [formattedSecName])
     
 
-    const adviser = data && data[0] && data[0][formattedSecName].adviser
+    // let adviser = data && data[0] && data[0][formattedSecName].adviser
+    let adviser
+    if(data){
+        const { adviser: extractedAdviser } = data[0][formattedSecName]
+        adviser = extractedAdviser
+    }
     
     let violations = [];
 
@@ -98,7 +103,7 @@ function Content({Strand, sectionName}) {
                             </tr>
                         ) : (
                             violations.map(record => {
-                                const date = new Date(record.date).toLocaleDateString()
+                                const date = new Date(record.date).toLocaleDateString() 
                                 return (
                                     <tr key={`${record.id}`}>
                                         <td>{record.violator}</td>
@@ -121,7 +126,9 @@ function Content({Strand, sectionName}) {
                             })
                         )}
                         <tr colSpan={5}>
-                             <td colSpan={6}><RecordForm section={formattedSecName}/> {/*<AddRecordBtn section_Name={formattedSecName}/>*/}</td> 
+                             <td colSpan={6}><RecordForm adviser1={
+                                adviser
+                            } section_name={formattedSecName}/> {/*<AddRecordBtn section_Name={formattedSecName}/>*/}</td> 
                         </tr>
                     </tbody>
                     

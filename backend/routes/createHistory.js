@@ -25,7 +25,6 @@ router.post('/', (req, res) => {
       console.error('Error saving history event:', err);
       res.status(500).json({ message: 'Error saving history event to the database' });
     } else {
-      console.log('History event saved successfully');
       res.status(200).json({ message: 'History event saved successfully' });
     }
   });

@@ -14,34 +14,40 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { sendRecord } from '../../Hooks/sendRecord';
 import dayjs from 'dayjs';
+import { useEffect } from 'react';
 
 
 
-export function RecordForm({section}){
+export function RecordForm({ section_name, adviser1 }){
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const [sectionName, setSectionName] = useState(section)
-    const [adviser, setAdviser] = useState('')
+
+    const [sectionName, setSectionName] = useState(section_name)
+    const [adviser, setAdviser] = useState(adviser1)
     const [violator, setViolator] = useState('')
     const [violation, setViolation] = useState('')
     const [violationDescription, setViolationDesc] = useState('')
     const [witness, setWitness] = useState('')
     const [date, setDate] = useState(dayjs())
     const [formattedDate, setformattedDate] = useState(dayjs().format('MM-DD-YYYY'))
-    
+
+    React.useEffect(() => {  //set adviser value once adviser1 is available
+        if(adviser1){
+            setAdviser(adviser1)
+        }
+    }, [adviser1, adviser])
+
     const handleSubmit = () => {
-        // console.log(JSON.stringify({sectionName, adviser, violator, violation, violationDescription, witness, formattedDate : date}));
-        // document.querySelector('.saveBtn').disabled = true
         const saveBtn = document.querySelector('.saveBtn')
+        logRecord() 
         sendRecord({sectionName, adviser, violator, violation, violationDescription, witness, date: formattedDate}, saveBtn)
     }
-    const logRecord = () => console.log({sectionName, adviser, violator, violation, violationDescription, witness, formattedDate : date});
+    const logRecord = () => console.log({sectionName, adviser, violator, violation, violationDescription, witness, date : formattedDate});
 
     return(
         <>
@@ -61,7 +67,14 @@ export function RecordForm({section}){
                 <DialogTitle>Add New Record</DialogTitle>
 
                 <DialogContent>
-                    <TextField required onChange={(e) => setAdviser(e.target.value)} id="outlined-basic" label="Adviser" variant="outlined" fullWidth autoFocus/>
+                    <TextField required onChange={(e) => {
+                            if(adviser1) {
+                                console.log('bruh');
+                            } //return if section already has a record
+                            setAdviser(e.target.value)
+                        }
+                    } 
+                    id="outlined-basic" label="Adviser" variant="outlined" fullWidth autoFocus/>
                     <TextField required onChange={(e) => setViolator(e.target.value)} id="outlined-basic" label="Violator Name" variant="outlined" fullWidth/>
                     
                     <InputLabel id="demo-simple-select-label">Violation</InputLabel>

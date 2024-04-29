@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import './StrandCard.css'
-import {PlusCircleTwoTone} from '@ant-design/icons'
-import { Button, Tooltip } from '@mui/material'
+import { AddSection } from './AddSection'
 
 function StrandCard({ Strand, Sections}) {
     return(
@@ -11,11 +10,7 @@ function StrandCard({ Strand, Sections}) {
                     <div className='d-flex justify-content-between px-3'>
                         <h6>
                             {Strand} 
-                            <Tooltip title={<><h6>Add a New Section</h6></>}>
-                                <Button sx={{ ml: -2 }}>
-                                    <PlusCircleTwoTone />
-                                </Button>
-                            </Tooltip>
+                            <AddSection />
                         </h6>
                         <h6 className='violation-header'>Violations</h6>
                     </div>

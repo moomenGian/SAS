@@ -2,11 +2,11 @@
 
 
 export async function sendRecord(datas, button) {
-
     //validate input
     const {sectionName, adviser, violator, violation, violationDescription, witness, date } = datas
     // console.log(datas);
     if(!sectionName || !adviser || !violation || !violator || !violation || !violationDescription || !witness || !date){
+        console.log(adviser);
         console.log('invalid input');
       return
     }
