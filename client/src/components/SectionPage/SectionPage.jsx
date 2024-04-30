@@ -76,7 +76,7 @@ function Content({Strand, sectionName}) {
             <table>
                     <thead>
                         <tr>
-                            <th>
+                            <th style={{ borderTopLeftRadius: '15px' }}>
                                 NAME
                             </th>
                             <th>
@@ -91,7 +91,7 @@ function Content({Strand, sectionName}) {
                             <th>
                                 DATE
                             </th>
-                            <th>
+                            <th style={{ borderTopRightRadius: '15px' }}>
                                 ACTIONS
                             </th>
                         </tr>

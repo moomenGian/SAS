@@ -1,9 +1,23 @@
 import { PlusCircleTwoTone } from '@ant-design/icons'
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, Tooltip } from '@mui/material'
+import axios from 'axios';
 import * as React from 'react'
 import { useState } from 'react';
 
-export const AddSection = () => {
+async function createSection(section, strand1) {
+  const sectionName = section.toUpperCase()
+  const strand = strand1.replaceAll(' ', '')
+  try {
+    await axios.post('/addSection', {
+     sectionName, strand
+    })
+    window.location.reload()
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export const AddSection = ({ strand }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -12,7 +26,7 @@ export const AddSection = () => {
 
 
   const handleCreateSection = () => {
-    console.log('Section Name:', sectionName);
+    createSection(sectionName, strand)
     handleClose();
   };
 
@@ -49,6 +63,7 @@ export const AddSection = () => {
             fullWidth
             value={sectionName}
             onChange={(e) => setSectionName(e.target.value)}
+            autoComplete='off'
           />
 
           <DialogActions sx={{ mt: 1 }}>

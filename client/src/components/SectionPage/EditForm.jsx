@@ -90,7 +90,7 @@ export function EditForm({ record }) {
         <DialogTitle>EDIT RECORD DETAILS</DialogTitle>
 
         <DialogContent>
-          <TextField className='mt-1' name="violator" label="Name" value={updatedRecord.violator} onChange={handleChange} fullWidth />
+          <TextField className='mt-1' name="violator" label="Name" value={updatedRecord.violator} onChange={handleChange} fullWidth autoComplete='off'/>
           <InputLabel id="demo-simple-select-label">Violation</InputLabel>
           <Select 
               labelId="demo-simple-select-label"
@@ -130,8 +130,9 @@ export function EditForm({ record }) {
               onChange={handleChange}
               fullWidth
               required
+              autoComplete='off'
           />
-          <TextField name="witness" label="Witness" value={updatedRecord.witness} onChange={handleChange} fullWidth />
+          <TextField autoComplete='off' name="witness" label="Witness" value={updatedRecord.witness} onChange={handleChange} fullWidth />
           <TextField name="date" label="Date (MM-DD-YYYY)" value={updatedRecord.date} onChange={handleChange} fullWidth />
 
             

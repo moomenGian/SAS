@@ -32,7 +32,6 @@ router.put('/:id', (req, res) => {
       res.status(500).json({ error: 'Error updating data' });
       return;
     }
-    console.log('Data updated successfully');
     res.status(200).json({ message: 'Data updated successfully' });
   });
 });

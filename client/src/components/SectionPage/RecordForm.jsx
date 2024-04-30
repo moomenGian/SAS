@@ -114,8 +114,9 @@ export function RecordForm({ section_name, adviser1 }){
                         onChange={(e) => setViolationDesc(e.target.value)}
                         fullWidth
                         required
+                        autoComplete='off'
                     />
-                    <TextField required onChange={(e) => setWitness(e.target.value)} id="outlined-basic" label="Witness" variant="outlined" fullWidth/>
+                    <TextField autoComplete='off' required onChange={(e) => setWitness(e.target.value)} id="outlined-basic" label="Witness" variant="outlined" fullWidth/>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DemoContainer components={['DatePicker']}>
                             <DatePicker className='datepicker' label="Date" value={date} onChange={(newValue) => setformattedDate(newValue.format('MM-DD-YYYY')) } />

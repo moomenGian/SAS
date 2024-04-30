@@ -52,9 +52,10 @@ table{
     margin-bottom: 80px;
 }
 
-table, th, td{
+td{
     border: 1px solid black !important;
 }
+
 
 table th{
     padding: 15px;

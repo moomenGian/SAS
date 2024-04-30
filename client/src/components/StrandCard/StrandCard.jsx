@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import './StrandCard.css'
 import { AddSection } from './AddSection'
+import { Typography } from '@mui/material'
 
 function StrandCard({ Strand, Sections}) {
     return(
@@ -10,7 +11,7 @@ function StrandCard({ Strand, Sections}) {
                     <div className='d-flex justify-content-between px-3'>
                         <h6>
                             {Strand} 
-                            <AddSection />
+                            <AddSection strand={Strand}/>
                         </h6>
                         <h6 className='violation-header'>Violations</h6>
                     </div>
@@ -18,16 +19,23 @@ function StrandCard({ Strand, Sections}) {
 
                     <div className="card-box">
                         
-                        { Sections.map((section, index) => (
-                            <Link key={section.name} 
-                                  to={`/section/:${Strand}/${section.name}`}
-                            >
-                                <div key={`${section.name}-${index}`} className='d-flex px-2 justify-content-between main'>
-                                    <p className='text-center mb-0 text-nowrap' >{section.name}</p>
-                                    <p className='text-center violation mb-0' >{section.violation}</p>
-                                </div>
-                            </Link>
-                        )) }
+                        {   
+                            Sections.length ? 
+                                Sections.map((section, index) => (
+                                    <Link key={`${section.sectionName} - ${index}`} 
+                                        to={`/section/:${Strand}/${section.sectionName}`}
+                                    >
+                                        <div key={index} className='d-flex px-2 justify-content-between main'>
+                                            <p className='text-center mb-0 text-nowrap' >{section.sectionName}</p>
+                                            <p className='text-center violation mb-0' >{section.violation}</p>
+                                        </div>
+                                    </Link>
+                                )) 
+                            :
+                            <Typography sx={{ textAlign: 'center', marginBlock: 'revert' }} variant='h6'>
+                                No Record.
+                            </Typography>
+                        }
 
                     </div>
                 </div>

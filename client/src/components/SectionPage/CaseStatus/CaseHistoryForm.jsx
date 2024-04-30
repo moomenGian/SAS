@@ -59,7 +59,7 @@ export function CaseHistoryForm({ caseID }) {
             autoFocus
             margin="dense"
             id="eventDescription"
-            label="Event Description"
+            label="Event"
             fullWidth
             value={eventDescription}
             onChange={(e) => setEventDescription(e.target.value)}
@@ -75,7 +75,7 @@ export function CaseHistoryForm({ caseID }) {
           <TextField
             margin="dense"
             id="notes"
-            label="Details"
+            label="Event Details"
             fullWidth
             multiline
             rows={4}

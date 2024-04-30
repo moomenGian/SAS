@@ -15,11 +15,11 @@ export function CaseDetails({ caseDetails, caseID }) {
           <table>
               <tbody>
                 <tr>
-                  <th><Typography variant='h5'>Date of Incident</Typography></th>
+                  <th style={{ borderTopLeftRadius: '15px' }}><Typography variant='h5'>Date of Incident</Typography></th>
                   <th><Typography variant='h5'>Violator</Typography></th>
                   <th><Typography variant='h5'>Violation</Typography></th>
                   <th><Typography variant='h5'>Violation Description</Typography></th>
-                  <th><Typography variant='h5'>Reporting Officer/Witness</Typography></th>
+                  <th style={{ borderTopRightRadius: '15px' }}><Typography variant='h5'>Reporting Officer/Witness</Typography></th>
 
                   
                 </tr>

@@ -14,6 +14,8 @@ const updateStatusRoute = require('./routes/updateStatus')
 const createHistoryRoute = require('./routes/createHistory')
 const getHistoryRoute = require('./routes/getHistory')
 const editAdviserRoute = require('./routes/editAdviser')
+const getSectionsRoute = require('./routes/getSections')
+const addSectionRoute = require('./routes/addSection')
 
 const { formatDate } = require('./dateFormat.js')
 
@@ -54,5 +56,9 @@ app.use('/createHistory', createHistoryRoute)
 app.use('/getHistories', getHistoryRoute)
 
 app.use('/editAdviser', editAdviserRoute)
+
+app.use('/getSectionNames', getSectionsRoute)
+
+app.use('/addSection', addSectionRoute)
 
 app.listen(port, () => console.log(`connected to port ${port}`))
