@@ -20,7 +20,7 @@ con.connect((err) => {
 router.get('/:strand', (req, res) => {
   const strand = req.params.strand
 
-  const sql = 'SELECT DISTINCT sectionName FROM sectionslist WHERE strand = ?'
+  const sql = 'SELECT * FROM sectionslist WHERE strand = ?'
 
   con.query(sql, [strand], (err, results) => {
     if(err){

@@ -17,6 +17,7 @@ export function SearchComponent() {
   const onSearch = async ( value, _e, info) => {
 
     if(!value.trim()){ //prevent getting all the records if input is empty
+      setSearchResults([])
       return
     }
 

@@ -47,22 +47,6 @@ export function EditForm({ record }) {
     }
   }
 
-  const handleDelete = async () => {
-    try {
-      const res = await fetch(`http://localhost:3000/delete/${updatedRecord.id}` , { method: 'DELETE'})
-
-      if(res.ok){
-        window.location.reload()
-        console.log('deleted successfully');
-      }else{
-        alert('failed to delete record')
-        console.error('failed to delete error')
-      }
-    } catch (e) {
-      alert('failed to delete record')
-      console.error(e)
-    }
-  }
 
 
   return(

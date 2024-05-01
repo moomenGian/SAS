@@ -28,6 +28,7 @@ router.get('/', async (req, res) => {
     const queryStr = `
       SELECT * FROM sectionsdata 
       WHERE violationDescription LIKE '%${query}%'
+      OR sectionName LIKE '%${query}%'
       OR violator LIKE '%${query}%'
       OR violation LIKE '%${query}%'
       OR witness LIKE '%${query}%'

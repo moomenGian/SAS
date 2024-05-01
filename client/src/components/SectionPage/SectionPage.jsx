@@ -7,6 +7,7 @@ import { Button, Input, TextField, Tooltip } from "@mui/material"
 import { useParams } from "react-router-dom"
 import { EditForm } from "./EditForm"
 import { EditAdviserForm } from "./EditAdviserForm"
+import { EditSectionName } from "./editSectionName"
 
 
 
@@ -40,7 +41,6 @@ function Content({Strand, sectionName}) {
     }, [formattedSecName])
     
 
-    // let adviser = data && data[0] && data[0][formattedSecName].adviser
     let adviser
     if(data){
         const { adviser: extractedAdviser } = data[0][formattedSecName]
@@ -59,7 +59,6 @@ function Content({Strand, sectionName}) {
     };
     fetchViolations()
 
-
     return (
         <>
             <h1 className="header">STUDENT VIOLATION RECORDS 
@@ -70,6 +69,7 @@ function Content({Strand, sectionName}) {
                 <h2>
                     {Strand} / {sectionName} / {adviser ? adviser : '<Adviser not found>'} 
                     <EditAdviserForm sectionName={formattedSecName}/>
+                    <EditSectionName name={formattedSecName}/>
                 </h2>
                 <p>Total Violations: {violations ? violations.length : 0}</p>
             </div>
@@ -111,7 +111,7 @@ function Content({Strand, sectionName}) {
                                         <td>{record.violationDescription}</td>
                                         <td>{record.witness}</td>
                                         <td>{date}</td>
-                                        <td className="actionBtns">
+                                        <td style={{ alignContent: 'center', height: '68px' }} className="actionBtns">
                                             <EditForm record={record}/>
                                             <Tooltip title={'View more details'}>
                                                 <Button
