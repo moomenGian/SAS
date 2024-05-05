@@ -12,8 +12,8 @@ const con = mysql.createConnection({
   password: 'password',
   database: 'anecdotalDB'
 });
-
-
+ 
+ 
 router.post('/', (req, res) => {
   const { sectionName, strand } = req.body;
   const sql = `INSERT INTO sectionslist (sectionName, strand) 

@@ -14,7 +14,7 @@ const mysql = require('mysql2')
 //     `witness` VARCHAR(45) NULL,
 //     `date` DATETIME NULL,
 //     PRIMARY KEY (`id`));
-
+ 
 const con = mysql.createConnection({
     host: 'localhost',
     user: 'root',

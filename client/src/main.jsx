@@ -4,7 +4,6 @@ import SectionPage from './components/SectionPage/SectionPage'
 import Dashboard from './components/Dashboard/Dashboard'
 import Loginpage from './components/LoginPage/LoginPage'
 import App from './App'
-import ChartchartTest from './ChartchartTest'
 import './index.css'
 
 

@@ -7,6 +7,8 @@ import axios from 'axios';
 import { Box, Paper, List, ListItem, ListItemText, Divider } from '@mui/material';
 import { CaseDetails } from './CaseDetails';
 import { useGetHistory } from '../../../Hooks/useGetHistory';
+import { CasePrint } from './CasePrint';
+import { useReactToPrint } from 'react-to-print'
 
 export function CaseStatusPage() {
   const { caseID } = useParams()
@@ -36,91 +38,73 @@ export function CaseStatusPage() {
     };
     fetchCaseData();
   }, [caseID]);
-
-
   
-  // const history = [
-  //   {
-  //     event_date: '2024-04-15',
-  //     event_description: 'Case opened',
-  //     initiator: 'Administrator',
-  //     notes: 'Initial case creation',
-  //   },
-  //   {
-  //     event_date: '2024-04-20',
-  //     event_description: 'Assigned to investigator',
-  //     initiator: 'Case Manager',
-  //     notes: 'Assigned to Investigator Smith for further investigation',
-  //   },
-  //   {
-  //     event_date: '2024-04-25',
-  //     event_description: 'Under review',
-  //     initiator: 'Investigator',
-  //     notes: 'Reviewing evidence and witness testimonies',
-  //   },
-  //   {
-  //     event_date: '2024-05-02',
-  //     event_description: 'Case closed',
-  //     initiator: 'Administrator',
-  //     notes: 'Case resolved, violator issued warning',
-  //   },
-  // ];
+  const caseRef = React.useRef();
+
+  const handlePrint = useReactToPrint({
+    content: () => caseRef.current,
+  });
   
   return (
-    <>
+    <div>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Button sx={{ m: 3, display: 'flex' }} variant='contained' onClick={() => window.history.back()}>
           Back
         </Button>
+        <Button onClick={handlePrint} sx={{ mr: 4 }}>
+          Print
+        </Button>
       </div>
-      <CaseDetails caseDetails={caseDetails} caseID={caseID}/>
       
-
-      <Box mt={4} sx={{ width: 'max-content', mx: 'auto', mb: '70px' }}>
-        <Typography variant="h4" sx={{ textAlign: 'center' }} gutterBottom>Case Status History</Typography>
-        <Paper elevation={5} >
-          <List sx={{p:0}}>
-            {history[0] ? 
-              history.map((event, index) => (
-                <React.Fragment key={index}>
-                  <ListItem>
-                    <ListItemText
-                      primary={
-                        <Typography variant="h5" gutterBottom>
-                          <strong>Date:</strong> {event.event_date}
-                        </Typography>
-                      }
-                      secondary={
-                        <>
+      <div ref={caseRef} style={{ marginTop: '50px' }}>
+        <CaseDetails caseDetails={caseDetails} caseID={caseID}/>
+        
+        <Box mt={4} sx={{ width: 'max-content', mx: 'auto', mb: '70px' }}>
+          <Typography variant="h4" sx={{ textAlign: 'center' }} gutterBottom>Case Status History</Typography>
+          <Paper elevation={5} >
+            <List sx={{p:0}}>
+              {history[0] ?
+                history.map((event, index) => (
+                  <React.Fragment key={index}>
+                    <ListItem>
+                      <ListItemText
+                        primary={
                           <Typography variant="h5" gutterBottom>
-                            <strong>Event:</strong>{' '}
-                            {event.eventDescription}
+                            <strong>Date:</strong> {event.event_date}
                           </Typography>
-                          <Typography variant="h5" gutterBottom>
-                            <strong>Action By:</strong> {event.initiator}
-                          </Typography>
-                          <Typography variant="h5" gutterBottom>
-                            <strong>Details:</strong> {event.notes}
-                          </Typography>
-                        </>
-                      }
-                    />
-                  </ListItem>
-                  {index < history.length - 1 && <Divider />}
-                </React.Fragment>
-              )) 
-              : 
-              <Paper elevation={3} style={{ padding: '20px', margin: '0' }}>
-                <Typography variant="h6">No History Found</Typography>
-                <Typography variant="body1">
-                  This case does not have any history yet.
-                </Typography>
-              </Paper> 
-              }
-          </List>
-        </Paper>
-      </Box>
+                        }
+                        secondary={
+                          <>
+                            <Typography variant="h5" gutterBottom>
+                              <strong>Event:</strong>{' '}
+                              {event.eventDescription}
+                            </Typography>
+                            <Typography variant="h5" gutterBottom>
+                              <strong>Action By:</strong> {event.initiator}
+                            </Typography>
+                            <Typography variant="h5" gutterBottom>
+                              <strong>Details:</strong> {event.notes}
+                            </Typography>
+                          </>
+                        }
+                      />
+                    </ListItem>
+                    {index < history.length - 1 && <Divider />}
+                  </React.Fragment>
+                ))
+                :
+                <Paper elevation={3} style={{ padding: '20px', margin: '0' }}>
+                  <Typography variant="h6">No History Found</Typography>
+                  <Typography variant="body1">
+                    This case does not have any history yet.
+                  </Typography>
+                </Paper>
+                }
+            </List>
+          </Paper>
+        </Box>
+      </div>
       
-    </>
+    </div>
   )
 }
