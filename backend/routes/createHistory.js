@@ -13,6 +13,14 @@ const con = mysql.createConnection({
   database: 'anecdotalDB'
 });
 
+// CREATE TABLE `anecdotaldb`.`casehistory` (
+//   `caseID` INT NULL,
+//   `event_date` VARCHAR(45) NULL,
+//   `eventDescription` VARCHAR(45) NULL,
+//   `initiator` VARCHAR(45) NULL,
+//   `notes` VARCHAR(45) NULL);
+
+
 router.post('/', (req, res) => {
   const { caseID, event_date, eventDescription, initiator, notes } = req.body;
 

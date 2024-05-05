@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom'
 import Homepage from './components/Homepage/Homepage'
 import { CaseStatusPage } from './components/SectionPage/CaseStatus/CaseStatusPage'
+import { PrintCase } from './components/SectionPage/CaseStatus/printCase'
 
 
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: '/CaseStatus/:caseID',
     element: <CaseStatusPage />
+  },
+  {
+    path: '/printCase/:caseID',
+    element: <PrintCase />
   }
 ])
 

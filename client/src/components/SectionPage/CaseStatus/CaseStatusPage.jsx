@@ -7,8 +7,6 @@ import axios from 'axios';
 import { Box, Paper, List, ListItem, ListItemText, Divider } from '@mui/material';
 import { CaseDetails } from './CaseDetails';
 import { useGetHistory } from '../../../Hooks/useGetHistory';
-import { CasePrint } from './CasePrint';
-import { useReactToPrint } from 'react-to-print'
 
 export function CaseStatusPage() {
   const { caseID } = useParams()
@@ -39,24 +37,23 @@ export function CaseStatusPage() {
     fetchCaseData();
   }, [caseID]);
   
-  const caseRef = React.useRef();
-
-  const handlePrint = useReactToPrint({
-    content: () => caseRef.current,
-  });
+  
+  const redirectToPrint = () => {
+    location.href = `http://localhost:5173/printCase/${caseID}`
+  }
   
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <Button sx={{ m: 3, display: 'flex' }} variant='contained' onClick={() => window.history.back()}>
-          Back
-        </Button>
-        <Button onClick={handlePrint} sx={{ mr: 4 }}>
+        <Button onClick={redirectToPrint}>
           Print
         </Button>
+        <Button sx={{ m: 3, display: 'flex', mr: 4 }} variant='contained' onClick={() => window.history.back()}>
+          Back
+        </Button> 
       </div>
       
-      <div ref={caseRef} style={{ marginTop: '50px' }}>
+      <div style={{ marginTop: '50px' }}>
         <CaseDetails caseDetails={caseDetails} caseID={caseID}/>
         
         <Box mt={4} sx={{ width: 'max-content', mx: 'auto', mb: '70px' }}>

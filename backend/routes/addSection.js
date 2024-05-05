@@ -12,6 +12,12 @@ const con = mysql.createConnection({
   password: 'password',
   database: 'anecdotalDB'
 });
+
+// CREATE TABLE `anecdotaldb`.`sectionslist` (
+//   `id` INT NULL,
+//   `sectionName` VARCHAR(45) NULL,
+//   `strand` VARCHAR(45) NULL);
+
  
  
 router.post('/', (req, res) => {
